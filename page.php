@@ -1,27 +1,55 @@
 <?php get_header(); ?>
 
-<section class="default-page">
+<?php
 
-    <div class="container">
+if(have_posts()) :
 
-        <?php
+    while(have_posts()) :
 
-        if(have_posts()) :
+        the_post();
 
-            while(have_posts()) :
+        /*
+        =====================================
+        Hero Section
+        =====================================
+        */
 
-                the_post();
+        get_template_part(
+            'template-parts/hero-section',
+            null,
+            array(
 
-                the_content();
+                'title' => get_the_title(),
 
-            endwhile;
+                'text' => 'Complete your booking and continue your property journey.',
 
-        endif;
+                'button' => '',
+
+                'link' => '',
+
+                'image' => 'https://flexproperty.ctmwork.com/wp-content/uploads/2026/05/home-banner.jpg'
+
+            )
+        );
 
         ?>
 
-    </div>
+        <section class="default-page">
 
-</section>
+            <div class="container">
+
+                <?php the_content(); ?>
+
+            </div>
+
+        </section>
+
+        <?php
+
+    endwhile;
+
+endif;
+
+?>
 
 <?php get_footer(); ?>

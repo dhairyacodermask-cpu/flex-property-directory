@@ -84,7 +84,7 @@ $property_type  = get_field('property_type');
 
         <p class="property-text">
 
-            <?php echo wp_trim_words(get_the_content(), 10); ?>
+            <?php echo wp_trim_words(get_the_content(), 9); ?>
 
         </p>
 
