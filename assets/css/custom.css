@@ -1,0 +1,549 @@
+:root {
+
+    /* Colors */
+    --primary-color: #c9a96e;
+    --secondary-color: #111111;
+    --white-color: #ffffff;
+    --light-color: #f5f5f5;
+    --text-color: #666666;
+    --border-color: #e5e5e5;
+
+    /* Typography */
+    --heading-font: 'Libre Baskerville', serif;
+    --body-font: 'Work Sans', sans-serif;
+
+    /* Font Sizes */
+    --fs-h1: 64px;
+    --fs-h2: 48px;
+    --fs-h3: 32px;
+    --fs-h4: 24px;
+    --fs-body: 16px;
+
+    /* Font Weight */
+    --fw-light: 300;
+    --fw-regular: 400;
+    --fw-medium: 500;
+    --fw-semibold: 600;
+    --fw-bold: 700;
+
+    /* Spacing */
+    --space-xs: 10px;
+    --space-sm: 20px;
+    --space-md: 40px;
+    --space-lg: 60px;
+    --space-xl: 100px;
+
+    /* Radius */
+    --radius-none: 0px;
+    --radius-sm: 10px;
+    --radius-md: 20px;
+
+    /* Transition */
+    --transition: all 0.4s ease;
+
+}
+
+body{
+    margin:0;
+    padding:0;
+    font-family: var(--body-font);
+    font-size: var(--fs-body);
+    font-weight: var(--fw-regular);
+    line-height: 1.7;
+    color: var(--text-color);
+    background: var(--light-color);
+}
+
+*{
+    box-sizing: border-box;
+}
+
+h1,h2,h3,h4,h5,h6{
+    margin:0;
+    font-family: var(--heading-font);
+    color: var(--secondary-color);
+    line-height: 1.2;
+}
+
+a{
+    text-decoration:none;
+    transition: var(--transition);
+}
+
+/*
+========================
+HEADER
+========================
+*/
+
+.custom-navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    padding: 24px 0;
+    transition: var(--transition);
+    background: transparent;
+}
+
+.custom-navbar.scrolled{
+    background: rgba(17,17,17,0.95);
+    backdrop-filter: blur(10px);
+    padding: 18px 0;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.navbar-brand{
+    color: var(--white-color);
+    font-size: 30px;
+    font-family: var(--heading-font);
+    font-weight: var(--fw-bold);
+}
+
+.navbar-brand:hover{
+    color: var(--white-color);
+}
+
+.navbar-nav{
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-link{
+    color: var(--white-color);
+    font-size: 15px;
+    font-weight: var(--fw-medium);
+    position: relative;
+    padding: 8px 16px !important;
+}
+
+.nav-link::after{
+    content: '';
+    position: absolute;
+    left: 16px;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    background: var(--primary-color);
+    transition: var(--transition);
+}
+
+.nav-link:hover{
+    color: var(--primary-color);
+}
+
+.nav-link:hover::after{
+    width: calc(100% - 32px);
+}
+
+/* Mobile Toggle */
+
+.navbar-toggler{
+    border: none;
+    box-shadow: none !important;
+    padding: 0;
+}
+
+.custom-toggler{
+    width: 30px;
+    height: 2px;
+    background: var(--white-color);
+    display: block;
+    position: relative;
+}
+
+.custom-toggler::before,
+.custom-toggler::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background: var(--white-color);
+}
+
+.custom-toggler::before{
+    top: -8px;
+}
+
+.custom-toggler::after{
+    top: 8px;
+}
+
+/* ======================== HERO SECTION START ======================== */
+
+.hero-section{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+}
+
+.hero-overlay{
+    position: absolute;
+    inset: 0;
+    background-color: #000;
+    opacity: 0.55;
+    z-index: 1;
+}
+
+.hero-content{
+    position: relative;
+    z-index: 2;
+    padding: 120px 0;
+    max-width: 850px;
+    margin: auto;
+}
+
+.hero-content h1{
+    font-family: var(--heading-font);
+    color: var(--white-color);
+    font-size: clamp(50px, 6vw, 72px);
+    line-height: 1.2;
+    margin-bottom: 24px;
+    letter-spacing: -0.02em;
+}
+
+.hero-content .hero-text {
+    font-size: 18px;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 40px;
+}
+
+.hero-breadcrumb{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.hero-breadcrumb a{
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.hero-breadcrumb a:hover{
+    color: var(--white-color);
+}
+
+.hero-breadcrumb span{
+    color: rgba(255,255,255,0.75);
+}
+
+.hero-btn{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 30px;
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    font-size: 15px;
+    font-weight: var(--fw-medium);
+}
+
+.hero-btn:hover{
+    background: var(--white-color);
+    color: var(--secondary-color);
+}
+
+/* ======================== HERO SECTION END ======================== */
+
+/* ======================== PROPERTY FILTER START ======================== */
+
+.property-archive {
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+/*
+========================
+SECTION HEADING
+========================
+*/
+
+.section-heading{
+    margin-bottom: 70px;
+}
+
+.section-subtitle{
+    display: inline-block;
+    font-size: 14px;
+    font-weight: var(--fw-semibold);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--primary-color);
+    margin-bottom: 18px;
+}
+
+.section-heading h2{
+    font-size: clamp(36px, 4vw, 52px);
+    margin-bottom: 24px;
+    line-height: 1.2;
+}
+
+.section-heading p{
+    max-width: 720px;
+    margin: auto;
+    font-size: 18px;
+    color: var(--text-color);
+}
+
+.section-divider{
+    width: 90px;
+    height: 2px;
+    background: var(--primary-color);
+    margin: 35px auto 0;
+    position: relative;
+}
+
+.section-divider::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 14px;
+    height: 14px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.property-filter{
+    background: var(--white-color);
+    padding: 30px;
+    position: sticky;
+    top: 120px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.property-filter h4{
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
+.filter-group{
+    margin-bottom: 24px;
+}
+
+.filter-group label{
+    display: block;
+    margin-bottom: 10px;
+    font-weight: var(--fw-medium);
+    color: var(--secondary-color);
+}
+
+.form-select{
+    height: 54px;
+    border-radius: var(--radius-none);
+    border: 1px solid var(--border-color);
+    box-shadow: none !important;
+}
+
+/* ======================== PROPERTY FILTER END ======================== */
+
+/* ======================== PROPERTY CARD START ======================== */
+
+.property-card{
+    position: relative;
+    background: var(--white-color);
+    overflow: hidden;
+    height: 100%;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+}
+
+.property-image{
+    position: relative;
+    overflow: hidden;
+}
+
+.property-image img{
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: 0.7s ease;
+}
+
+.property-badges{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    z-index: 2;
+}
+
+.property-location,
+.property-type{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 16px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: var(--fw-medium);
+    backdrop-filter: blur(10px);
+}
+
+.property-location{
+    background: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.property-type{
+    background: rgba(17,17,17,0.75);
+    color: var(--white-color);
+}
+
+.property-content{
+    padding: 20px;
+}
+
+.property-title{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.property-title a{
+    color: var(--secondary-color);
+}
+
+.property-title a:hover{
+    color: var(--primary-color);
+}
+
+.property-price{
+    font-size: 20px;
+    font-weight: var(--fw-medium);
+    color: var(--primary-color);
+}
+
+.property-text{
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+.property-btn{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 30px;
+    background: var(--secondary-color);
+    color: var(--white-color);
+    font-size: 15px;
+    font-weight: var(--fw-medium);
+}
+
+.property-btn:hover{
+    background: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+/* ======================== PROPERTY CARD END ======================== */
+
+/* ======================== SINGLE PROPERTY START ======================== */
+
+.single-property{
+    padding: 70px 0 70px;
+}
+
+.single-property-image{
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.single-property-image img{
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.property-gallery{
+    margin-bottom: 40px;
+}
+
+.gallery-item{
+    overflow: hidden;
+}
+
+.gallery-item img{
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.property-meta{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-bottom: 24px;
+}
+
+.property-meta span{
+    padding: 10px 18px;
+    border-radius: 30px;
+    background: var(--primary-color);
+    font-size: 14px;
+    font-weight: var(--fw-medium);
+    color: var(--secondary-color);
+}
+
+.single-property-content h1{
+    font-size: clamp(36px, 4vw, 56px);
+    margin-bottom: 24px;
+}
+
+.single-property-price{
+    font-size: 34px;
+    color: var(--primary-color);
+    font-weight: var(--fw-semibold);
+    margin-bottom: 30px;
+}
+
+.property-description{
+    color: var(--text-color);
+}
+
+.property-sidebar{
+    position: sticky;
+    top: 120px;
+    background: var(--white-color);
+    padding: 35px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+}
+
+.property-sidebar h3{
+    margin-bottom: 24px;
+    font-size: 28px;
+}
+
+.amenities-list{
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px;
+}
+
+.amenities-list li{
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--secondary-color);
+}
+
+/* ======================== SINGLE PROPERTY END ======================== */
+
+/* ======================== DEFAULT PAGE START ======================== */
+
+.default-page{
+    padding: 140px 0 100px;
+}
+
+/* ======================== DEFAULT PAGE END ======================== */

@@ -1,0 +1,135 @@
+/*
+========================
+991px
+========================
+*/
+
+@media(max-width:991px){
+
+    .custom-navbar{
+        background: rgba(17,17,17,0.95);
+        padding: 18px 0;
+    }
+
+    .navbar-collapse{
+        margin-top: 20px;
+    }
+}
+
+/* ======================== HERO SECTION START ======================== */
+
+@media(max-width:1199px){
+
+    .hero-content{
+        padding: 120px 0;
+    }
+
+}
+
+@media(max-width:767px){
+
+    .hero-section{
+        min-height: 80vh;
+    }
+
+    .hero-content h1{
+        font-size: 42px;
+    }
+
+    .hero-content p{
+        font-size: 16px;
+    }
+
+}
+/* ======================== HERO SECTION END ======================== */
+
+/* ======================== SECTION HEADING ======================== */
+
+@media(max-width:767px){
+
+    .section-heading{
+        margin-bottom: 50px;
+    }
+
+    .section-heading p{
+        font-size: 16px;
+    }
+
+}
+
+/* ======================== PROPERTY FILTER START ======================== */
+
+@media(max-width:991px){
+
+    .property-filter{
+        margin-bottom: 40px;
+        position: relative;
+        top: 0;
+    }
+
+}
+
+/* ======================== PROPERTY FILTER END ======================== */
+
+/* ======================== PROPERTY CARD START ======================== */
+
+@media(max-width:767px){
+
+    .property-content{
+        padding: 24px;
+    }
+
+    .property-image img{
+        height: 240px;
+    }
+
+    .property-title{
+        font-size: 24px;
+    }
+
+    .property-price{
+        font-size: 24px;
+    }
+
+}
+
+/* ======================== PROPERTY CARD END ======================== */
+
+
+/* ======================== SINGLE PROPERTY START ======================== */
+
+@media(max-width:991px){
+
+    .property-sidebar{
+        margin-top: 40px;
+        position: relative;
+        top: 0;
+    }
+
+}
+
+@media(max-width:767px){
+
+    .single-property{
+        padding: 70px 0 70px;
+    }
+
+    .single-property-image img{
+        height: 400px;
+    }
+
+    .gallery-item img{
+        height: 200px;
+    }
+
+    .single-property-content h1{
+        font-size: 34px;
+    }
+
+    .single-property-price{
+        font-size: 28px;
+    }
+
+}
+
+/* ======================== SINGLE PROPERTY END ======================== */
